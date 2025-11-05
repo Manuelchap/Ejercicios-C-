@@ -1,0 +1,284 @@
+* {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Quicksand', sans-serif;
+      background: linear-gradient(135deg, #1F1F1F 50%, #6C5CE7 25%, #FDCB6E 25% );
+      min-height: 100vh;
+      padding: 40px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    /* Tarjeta 1: Nombre */
+    #Nombre {
+      background: rgba(255, 255, 255, 0.3);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 50px 40px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+      text-align: center;
+      max-width: 98%;
+      width: 100%;
+      transform: translateY(0);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    #Nombre:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 25px 70px rgba(0, 0, 0, 0.4);
+    }
+
+    #Nombre h1 {
+      font-size: 2.5em;
+      font-weight: 700;
+      background: linear-gradient(135deg,#71c50a 0%, #c0bbd1 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 15px;
+    }
+
+    #Nombre p {
+      font-size: 1.2em;
+      color: #666;
+      font-weight: 500;
+    }
+
+    /* Tarjeta 2: Redes Sociales */
+    #contacto {
+      background: rgba(255, 255, 255, 0.3);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 35px 40px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+      max-width: 98%;
+      width: 100%;
+      transform: translateY(0);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    #contacto:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 25px 70px rgba(0, 0, 0, 0.4);
+    }
+
+    #contacto::before {
+      content: "📱 Conecta Conmigo";
+      display: block;
+      font-size: 1.5em;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 30px;
+      color: #333;
+    }
+
+    #contacto {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .redes {
+      width: 80px;
+      height: 80px;
+      background: linear-gradient(135deg,#9dd755 0%, #32cd32 100%);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      box-shadow: 0 5px 15px rgba(164, 220, 141, 0.4);
+    }
+
+    .redes:hover {
+      transform: translateY(-10px) scale(1.1);
+      box-shadow: 0 15px 30px rgba(154, 214, 145, 0.6);
+    }
+
+    .redes img {
+      filter: brightness(0) invert(1);
+      transition: transform 0.3s ease;
+    }
+
+    .redes:hover img {
+      transform: rotate(360deg);
+    }
+
+    /* Tarjeta 3: Proyectos - Diseño Especial */
+    #section_proyectos {
+      background: rgba(255, 255, 255, 0.3);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 50px 40px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+      max-width: 98%;
+      width: 100%;
+      position: relative;
+      overflow: hidden;
+    }
+
+    #section_proyectos::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 5px;
+      background: linear-gradient(90deg, #ffd700 0%, #fffacd 50%, #98ff98 100%);
+      background-size: 200% 100%;
+      animation: gradientMove 3s ease infinite;
+    }
+
+    @keyframes gradientMove {
+      0%, 100% { background-position: 0% 0%; }
+      50% { background-position: 100% 0%; }
+    }
+
+    #section_proyectos::after {
+      content: "💼 Mis Proyectos";
+      display: block;
+      font-size: 2em;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 40px;
+      background: linear-gradient(135deg, #667eea 0%, #6619e0 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    #section_proyectos {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+      padding-top: 100px;
+    }
+
+    .proyectos {
+      background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+      border-radius: 15px;
+      padding: 30px;
+      text-align: center;
+      transition: all 0.4s ease;
+      border: 2px solid #34495E;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .proyectos::before {
+      content: "";
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(45deg, transparent, rgba(102, 126, 234, 0.1), transparent);
+      transform: rotate(45deg);
+      transition: all 0.6s ease;
+    }
+
+    .proyectos:hover::before {
+      left: 100%;
+    }
+
+    .proyectos:hover {
+      transform: translateY(-10px) scale(1.05);
+      box-shadow: 0 15px 40px rgba(102, 126, 234, 0.4);
+      border-color:  #FF6F61;
+      background: linear-gradient(135deg, #ffffff 0%, #e0e7ff 100%);
+    }
+
+    .proyectos h2 {
+      font-size: 1.5em;
+      margin-bottom: 20px;
+      color: #333;
+      font-weight: 700;
+    }
+
+    .proyectos a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 60px;
+      height: 60px;
+      background: linear-gradient(135deg, #ffD700 100%, #FFFACD 0%);
+      border-radius: 50%;
+      transition: all 0.3s ease;
+      box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+    }
+
+    .proyectos a:hover {
+      transform: rotate(360deg) scale(1.2);
+      box-shadow: 0 10px 25px rgba(102, 126, 234, 0.5);
+    }
+
+    .proyectos a img {
+      filter: brightness(0) invert(1);
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      #Nombre h1 {
+        font-size: 1.8em;
+      }
+
+      #Nombre {
+        padding: 35px 25px;
+      }
+
+      #contacto {
+        padding: 30px 25px;
+      }
+
+      #section_proyectos {
+        grid-template-columns: 1fr;
+        padding: 80px 25px 40px;
+      }
+
+      body {
+        padding: 20px 15px;
+        gap: 20px;
+      }
+
+      .redes {
+        width: 70px;
+        height: 70px;
+      }
+
+      .redes img, .redes svg {
+        width: 35px !important;
+        height: 35px !important;
+      }
+    }
+
+    @media (max-width: 480px) {
+      #Nombre h1 {
+        font-size: 1.5em;
+      }
+
+      #Nombre p {
+        font-size: 1em;
+      }
+
+      #contacto::before {
+        font-size: 1.2em;
+      }
+
+      .redes {
+        width: 65px;
+        height: 65px;
+      }
+
+      #section_proyectos::after {
+        font-size: 1.5em;
+      }
+    }
